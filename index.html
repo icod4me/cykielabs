@@ -3,88 +3,203 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cykie Labs — small, private apps</title>
-<meta name="description" content="Cykie Labs makes small, friendly apps that keep your data on your device. Makers of Cykie, the private, offline period tracker.">
-<meta name="theme-color" content="#ff4d6d">
-<link rel="icon" href="favicon.png">
-<meta property="og:title" content="Cykie Labs">
-<meta property="og:description" content="Small, friendly apps that keep your data on your device.">
-<meta property="og:image" content="img/icon-512.png">
-<link rel="stylesheet" href="style.css?v=3">
-<style>
-  .labs-hero { padding: 72px 0 32px; text-align: center; }
-  .labs-hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 46ch; margin: 0 auto; }
-  .app-card { display: grid; grid-template-columns: 96px 1fr; gap: 22px; align-items: center; }
-  .app-card img { width: 96px; height: 96px; border-radius: 24px; border: 2px solid var(--line); }
-  .app-card .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
-  @media (max-width: 560px) { .app-card { grid-template-columns: 1fr; text-align: center; justify-items: center; } .app-card .cta { justify-content: center; } }
-  .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-  .values .card p { color: var(--muted); margin: 0; }
-</style>
+<title>Cykie Labs — an independent app studio</title>
+<meta name="description" content="Cykie Labs is an independent studio making calm, private apps for everyday life. Our apps work offline, need no account, and keep what you enter on your own device.">
+<meta name="theme-color" content="#5a48f0">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="img/logo-180.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cykielabs.com/">
+<meta property="og:title" content="Cykie Labs — an independent app studio">
+<meta property="og:description" content="Calm, private apps for everyday life. Offline, no account, your data stays on your device.">
+<meta property="og:image" content="https://cykielabs.com/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./"><img src="img/icon-180.png" alt="">Cykie Labs</a>
-    <nav class="nav"><a href="#apps">Apps</a><a href="#contact">Contact</a></nav>
+    <a class="logo" href="./" aria-label="Cykie Labs home">
+      <img src="img/logo.svg" alt="" width="34" height="34">
+      <span class="wordmark">cykie<b>labs</b></span>
+    </a>
+    <nav class="nav">
+      <a href="#apps">Apps</a>
+      <a href="#principles">Principles</a>
+      <a href="#studio">Studio</a>
+      <a class="btn" href="#contact">Contact</a>
+    </nav>
   </div>
 </header>
 
 <main>
-  <section class="labs-hero">
-    <div class="narrow">
-      <h1>Small apps.<br><span class="pink">Big on privacy.</span></h1>
-      <p class="lead">Cykie Labs makes friendly, everyday apps that work offline and keep what you enter on your
-        own device — no accounts, no ads, no tracking.</p>
-    </div>
-  </section>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Independent app studio</div>
+        <h1>Thoughtful apps that keep your life <em>yours</em>.</h1>
+        <p class="lead">Cykie Labs designs and builds calm, private apps for everyday life. They work offline,
+          ask for no account, and keep what you enter on your own device.</p>
+        <div class="cta">
+          <a class="btn brand" href="#apps">Explore our apps</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
 
-  <section id="apps">
-    <div class="narrow">
-      <div class="section-title"><h2>Our apps</h2></div>
-      <div class="card app-card">
-        <img src="img/icon-180.png" alt="Cykie app icon">
-        <div>
-          <h3>Cykie — period &amp; cycle tracker</h3>
-          <p class="muted">Predictions, a calendar, insights and gentle reminders, with a cute character and looks to
-            choose from. Everything stays on your phone.</p>
-          <div class="cta">
-            <a class="btn" href="cykie/">Visit Cykie</a>
-            <a class="btn ghost" href="https://apps.apple.com/app/id6813214699">App Store</a>
-          </div>
+      <div class="shelf" aria-hidden="true">
+        <div class="tile brand"><img src="img/logo.svg" alt=""></div>
+        <div class="tile live t1"><img src="img/cykie-180.png" alt=""><span class="label">Cykie</span></div>
+        <div class="tile soon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg>
+          <span class="label">In the lab</span>
+        </div>
+        <div class="tile soon t3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="label">Next</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <div class="facts">
     <div class="wrap">
-      <div class="section-title"><h2>How we build</h2></div>
-      <div class="values">
-        <div class="card"><h3>🔒 Your data stays yours</h3><p>Our apps keep what you enter on your device. We don't run servers that collect it.</p></div>
-        <div class="card"><h3>🌿 Calm, not pushy</h3><p>No ads, no dark patterns, no streak guilt. Apps that help and then get out of the way.</p></div>
-        <div class="card"><h3>🌍 For everyone</h3><p>Translated into many languages, with light and dark modes and large-text support.</p></div>
+      <ul>
+        <li><span>◎</span>On-device by default</li>
+        <li><span>⌀</span>No ads, ever</li>
+        <li><span>✕</span>No trackers</li>
+        <li><span>✓</span>No account needed</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="apps">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Our apps</div>
+        <h2>Made with care, built to last.</h2>
+        <p>Every Cykie Labs app is small, focused and private. Here's what we've shipped and what's next.</p>
+      </div>
+
+      <div class="apps">
+        <article class="card app">
+          <img src="img/cykie-180.png" alt="Cykie app icon" width="112" height="112">
+          <div>
+            <ul class="tags"><li class="ok">Available now</li><li>Health</li><li>iPhone</li></ul>
+            <h3>Cykie</h3>
+            <p>A friendly period and cycle tracker with predictions, a calendar, insights and gentle reminders.
+              Everything stays on your phone.</p>
+            <div class="cta">
+              <a class="btn" href="https://apps.apple.com/app/id6813214699">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c.02 2.43 2.13 3.24 2.15 3.25-.02.06-.34 1.15-1.11 2.28-.67.98-1.36 1.95-2.45 1.97-1.07.02-1.42-.63-2.64-.63-1.23 0-1.61.61-2.62.65-1.05.04-1.85-1.06-2.52-2.04-1.37-1.99-2.42-5.62-1.01-8.07.7-1.22 1.95-1.99 3.31-2.01 1.03-.02 2 .7 2.63.7.63 0 1.81-.86 3.06-.73.52.02 1.98.21 2.92 1.59-.08.05-1.74 1.02-1.72 3.04zM14.35 5.04c.56-.68.94-1.62.83-2.56-.81.03-1.79.54-2.37 1.21-.52.6-.98 1.56-.85 2.48.9.07 1.83-.46 2.39-1.13z"/></svg>
+                App Store</a>
+              <a class="btn ghost" href="cykie/">Learn more</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card lab">
+          <div>
+            <h3>More in the lab</h3>
+            <p>We're working on what comes next, with the same promise: private, calm, and made for everyone.
+              Want to hear about it first?</p>
+          </div>
+          <a class="btn" href="mailto:hello@cykielabs.com?subject=Keep%20me%20posted">Keep me posted</a>
+        </article>
       </div>
     </div>
   </section>
 
+  <section id="principles" style="padding-top:0">
+    <div class="wrap">
+      <div class="head">
+        <div class="eyebrow">Principles</div>
+        <h2>How we build every app.</h2>
+        <p>These aren't features we add later. They're the rules each app starts with.</p>
+      </div>
+      <div class="grid4">
+        <div class="card principle">
+          <div class="ic c1"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+          <h3>Private by design</h3>
+          <p>What you enter stays on your device. We don't run servers that collect it, and we never sell data.</p>
+        </div>
+        <div class="card principle">
+          <div class="ic c2"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></div>
+          <h3>Calm, not pushy</h3>
+          <p>No ads, no dark patterns, no guilt-trip streaks. Apps that help, then get out of your way.</p>
+        </div>
+        <div class="card principle">
+          <div class="ic c3"><svg viewBox="0 0 24 24"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"/><path d="M3 3l18 18"/></svg></div>
+          <h3>Works offline</h3>
+          <p>No account and no sign-in. Open the app and it just works, wherever you are.</p>
+        </div>
+        <div class="card principle">
+          <div class="ic c4"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+          <h3>Made for everyone</h3>
+          <p>Many languages, light and dark modes, and support for large text from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio" class="about">
+    <div class="wrap">
+      <div class="copy">
+        <div class="eyebrow">The studio</div>
+        <h2>Small on purpose.</h2>
+        <p>Cykie Labs is an independent studio. We have no investors pushing for growth at any cost, so we can make
+          apps the way we'd want them made for ourselves.</p>
+        <p>We'd rather ship a few apps people love and trust than many they forget. Each one is designed, built
+          and supported by the people who made it.</p>
+      </div>
+      <ol class="steps">
+        <li><div><h3>Start with a real need</h3><p>Every app begins with an everyday problem worth solving well.</p></div></li>
+        <li><div><h3>Keep it small and private</h3><p>Only the features that matter, with your data kept on your device.</p></div></li>
+        <li><div><h3>Care for it long-term</h3><p>Regular updates, real support and listening to the people who use it.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
   <section id="contact">
-    <div class="narrow" style="text-align:center">
-      <h2>Say hello</h2>
-      <p class="muted">Questions, press, or partnerships — we'd love to hear from you.</p>
-      <p><a class="btn" href="mailto:icod4me@gmail.com">icod4me@gmail.com</a></p>
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Let's talk.</h2>
+          <p>Questions, press, partnerships or ideas: we read every message and reply as soon as we can.</p>
+        </div>
+        <div class="links">
+          <a class="row" href="mailto:hello@cykielabs.com"><span><small>Email</small>hello@cykielabs.com</span><i>→</i></a>
+          <a class="row" href="cykie/support.html"><span><small>Need help with an app?</small>Cykie support</span><i>→</i></a>
+        </div>
+      </div>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Cykie Labs</span>
-    <nav>
-      <a href="cykie/">Cykie</a>
-      <a href="cykie/privacy-policy.html">Privacy</a>
-      <a href="cykie/terms.html">Terms</a>
-    </nav>
+    <div class="cols">
+      <div>
+        <a class="logo" href="./"><img src="img/logo.svg" alt="" width="34" height="34"><span class="wordmark">cykie<b>labs</b></span></a>
+        <p class="about-line">An independent studio making calm, private apps for everyday life.</p>
+      </div>
+      <div>
+        <h4>Apps</h4>
+        <ul><li><a href="cykie/">Cykie</a></li><li><a href="https://apps.apple.com/app/id6813214699">Cykie on the App Store</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#principles">Principles</a></li><li><a href="#studio">Studio</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul><li><a href="cykie/privacy-policy.html">Cykie privacy</a></li><li><a href="cykie/terms.html">Cykie terms</a></li></ul>
+      </div>
+    </div>
+    <div class="base">
+      <span>© 2026 Cykie Labs. All rights reserved.</span>
+      <span>This website uses no cookies or trackers.</span>
+    </div>
   </div>
 </footer>
 </body>
