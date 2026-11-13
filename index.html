@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cykie Labs — small, private apps</title>
+<meta name="description" content="Cykie Labs makes small, friendly apps that keep your data on your device. Makers of Cykie, the private, offline period tracker.">
+<meta name="theme-color" content="#ff4d6d">
+<link rel="icon" href="favicon.png">
+<meta property="og:title" content="Cykie Labs">
+<meta property="og:description" content="Small, friendly apps that keep your data on your device.">
+<meta property="og:image" content="img/icon-512.png">
+<link rel="stylesheet" href="style.css?v=3">
+<style>
+  .labs-hero { padding: 72px 0 32px; text-align: center; }
+  .labs-hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 46ch; margin: 0 auto; }
+  .app-card { display: grid; grid-template-columns: 96px 1fr; gap: 22px; align-items: center; }
+  .app-card img { width: 96px; height: 96px; border-radius: 24px; border: 2px solid var(--line); }
+  .app-card .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  @media (max-width: 560px) { .app-card { grid-template-columns: 1fr; text-align: center; justify-items: center; } .app-card .cta { justify-content: center; } }
+  .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .values .card p { color: var(--muted); margin: 0; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon-180.png" alt="">Cykie Labs</a>
+    <nav class="nav"><a href="#apps">Apps</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="labs-hero">
+    <div class="narrow">
+      <h1>Small apps.<br><span class="pink">Big on privacy.</span></h1>
+      <p class="lead">Cykie Labs makes friendly, everyday apps that work offline and keep what you enter on your
+        own device — no accounts, no ads, no tracking.</p>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="narrow">
+      <div class="section-title"><h2>Our apps</h2></div>
+      <div class="card app-card">
+        <img src="img/icon-180.png" alt="Cykie app icon">
+        <div>
+          <h3>Cykie — period &amp; cycle tracker</h3>
+          <p class="muted">Predictions, a calendar, insights and gentle reminders, with a cute character and looks to
+            choose from. Everything stays on your phone.</p>
+          <div class="cta">
+            <a class="btn" href="cykie/">Visit Cykie</a>
+            <a class="btn ghost" href="https://apps.apple.com/app/id6813214699">App Store</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-title"><h2>How we build</h2></div>
+      <div class="values">
+        <div class="card"><h3>🔒 Your data stays yours</h3><p>Our apps keep what you enter on your device. We don't run servers that collect it.</p></div>
+        <div class="card"><h3>🌿 Calm, not pushy</h3><p>No ads, no dark patterns, no streak guilt. Apps that help and then get out of the way.</p></div>
+        <div class="card"><h3>🌍 For everyone</h3><p>Translated into many languages, with light and dark modes and large-text support.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="narrow" style="text-align:center">
+      <h2>Say hello</h2>
+      <p class="muted">Questions, press, or partnerships — we'd love to hear from you.</p>
+      <p><a class="btn" href="mailto:icod4me@gmail.com">icod4me@gmail.com</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Cykie Labs</span>
+    <nav>
+      <a href="cykie/">Cykie</a>
+      <a href="cykie/privacy-policy.html">Privacy</a>
+      <a href="cykie/terms.html">Terms</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
