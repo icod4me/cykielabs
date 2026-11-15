@@ -231,7 +231,9 @@ footer .base { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--
 .app-card .more { color: inherit; margin-top: auto; position: relative; z-index: 1; }
 .app-card .shot { position: absolute; right: -30px; bottom: -150px; width: 190px; border-radius: 22px; transform: rotate(-8deg); transition: transform .3s ease; box-shadow: 0 20px 40px -20px rgba(0,0,0,.5); }
 .app-card:hover .shot { transform: rotate(-4deg) translateY(-10px); }
-@media (max-width: 980px) { .app-grid { grid-template-columns: 1fr; } .app-card { min-height: 300px; } .app-card .shot { width: 150px; bottom: -120px; } .app-card p { max-width: 60%; } }
+.app-grid.two-up { grid-template-columns: repeat(2, 1fr); }
+.more-apps { padding-bottom: 88px; }
+@media (max-width: 980px) { .app-grid, .app-grid.two-up { grid-template-columns: 1fr; } .app-card { min-height: 300px; } .app-card .shot { width: 150px; bottom: -120px; } .app-card p { max-width: 60%; } }
 
 /* dark band */
 .band { background: #1b1813; color: #f3eee6; padding: 88px 0; }
