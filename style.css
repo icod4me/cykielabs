@@ -564,13 +564,13 @@ footer ul a:hover { transform: translateX(4px); }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 
-/* ScanWise: fresh green from its icon. No screenshots yet, so the hero uses a "what a scan shows" card. */
-:root { --scan-bg: #e2f3ec; --scan: #0b7a63; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --scan-bg: #10231e; --scan: #4fd1b0; } }
-:root[data-theme="dark"] { --scan-bg: #10231e; --scan: #4fd1b0; }
-.app.scanwise, .app-hero.scanwise, .app-card.scanwise { background: var(--scan-bg); }
-.app.scanwise .btn, .app-hero.scanwise .btn { background: var(--scan); border-color: var(--scan); color: var(--paper); }
-.app.scanwise .btn.line { background: transparent; color: var(--ink); border-color: color-mix(in srgb, var(--scan) 45%, transparent); }
+/* Groclens: glowing cyan from its lens icon. No screenshots yet, so the hero uses a "what a scan shows" card. */
+:root { --scan-bg: #e4f3fa; --scan: #0a7fa8; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --scan-bg: #0d1630; --scan: #3fd8f2; } }
+:root[data-theme="dark"] { --scan-bg: #0d1630; --scan: #3fd8f2; }
+.app.groclens, .app-hero.groclens, .app-card.groclens { background: var(--scan-bg); }
+.app.groclens .btn, .app-hero.groclens .btn { background: var(--scan); border-color: var(--scan); color: var(--paper); }
+.app.groclens .btn.line { background: transparent; color: var(--ink); border-color: color-mix(in srgb, var(--scan) 45%, transparent); }
 .soon { display: inline-flex; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: .95rem;
   border: 1.5px dashed color-mix(in srgb, var(--scan) 60%, transparent); color: var(--scan); }
 .soon svg { width: 17px; height: 17px; fill: currentColor; }
