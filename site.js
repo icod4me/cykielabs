@@ -34,8 +34,19 @@
     if (bar) bar.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
     toTop?.classList.toggle("show", y > innerHeight * 0.9);
   };
-  addEventListener("scroll", onScroll, { passive: true });
+  let ticking = false;
+  addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => { ticking = false; onScroll(); });
+  }, { passive: true });
   onScroll();
+
+  /* ---------- the word ticker only moves while it's on screen ---------- */
+  const ticker = $(".ticker");
+  if (ticker && "IntersectionObserver" in window && !reduce) {
+    new IntersectionObserver(([e]) => ticker.classList.toggle("run", e.isIntersecting)).observe(ticker);
+  }
   toTop?.addEventListener("click", () => scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }));
 
   /* ---------- copy email ---------- */
@@ -114,7 +125,7 @@
     ".pillars a", ".app-grid > *", ".head-row", ".block .kicker + h2", ".band .wrap > *", ".rules li",
     ".about .wrap > *", "article.app", ".feature-grid > div", ".service-grid > div", ".steps li",
     ".sup-card", ".faq details", ".contact-grid a", ".next-card", ".panel", ".ticks li", ".prose > *",
-    ".stats .wrap > div", ".peek .marquee",
+    ".stats .wrap > div", ".peek .gallery",
   ];
   const els = [];
   groups.forEach(sel => $$(sel).forEach(el => {
@@ -155,41 +166,25 @@
   };
   addEventListener("scroll", check, { passive: true });
   addEventListener("resize", check);
-  const timer = setInterval(check, 350);
+  const timer = setInterval(check, 500);
   check();
 
   if (!fine) return;
 
-  /* ---------- spotlight + tilt on cards ---------- */
-  $$(".app-card, .sup-card, .contact-grid a, .panel, .steps li, .pillars a, .service-grid > div, .feature-grid > div").forEach(card => {
+  /* ---------- soft spotlight on cards, gentle tilt on app cards (one update per frame) ---------- */
+  $$(".app-card, .sup-card, .contact-grid a, .panel, .steps li, .pillars a").forEach(card => {
     card.classList.add("spot");
-    const tilt = card.matches(".app-card, .sup-card, .contact-grid a");
-    card.addEventListener("pointermove", e => {
+    const tilt = card.matches(".app-card");
+    let raf = 0, ev = null;
+    const paint = () => {
+      raf = 0;
       const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
-      card.style.setProperty("--mx", x * 100 + "%");
-      card.style.setProperty("--my", y * 100 + "%");
-      if (tilt) card.style.transform = `perspective(900px) rotateX(${(0.5 - y) * 5}deg) rotateY(${(x - 0.5) * 6}deg) translateY(-4px)`;
-    });
-    card.addEventListener("pointerleave", () => { card.style.transform = ""; });
+      const x = (ev.clientX - r.left) / r.width, y = (ev.clientY - r.top) / r.height;
+      card.style.setProperty("--mx", (x * 100).toFixed(1) + "%");
+      card.style.setProperty("--my", (y * 100).toFixed(1) + "%");
+      if (tilt) card.style.transform = `perspective(1000px) rotateX(${((0.5 - y) * 3).toFixed(2)}deg) rotateY(${((x - 0.5) * 4).toFixed(2)}deg) translateY(-4px)`;
+    };
+    card.addEventListener("pointermove", e => { ev = e; if (!raf) raf = requestAnimationFrame(paint); }, { passive: true });
+    card.addEventListener("pointerleave", () => { if (raf) cancelAnimationFrame(raf); raf = 0; card.style.transform = ""; });
   });
-
-  /* ---------- magnetic buttons ---------- */
-  $$(".btn").forEach(b => {
-    b.addEventListener("pointermove", e => {
-      const r = b.getBoundingClientRect();
-      b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.18}px, ${(e.clientY - r.top - r.height / 2) * 0.28}px)`;
-    });
-    b.addEventListener("pointerleave", () => { b.style.transform = ""; });
-  });
-
-  /* ---------- hero phones follow the pointer ---------- */
-  const fan = $(".fan"), hero = $(".hero");
-  if (fan && hero) {
-    hero.addEventListener("pointermove", e => {
-      const x = e.clientX / innerWidth - 0.5, y = e.clientY / innerHeight - 0.5;
-      fan.style.transform = `translate(${x * -18}px, ${y * -14}px) rotateY(${x * 6}deg) rotateX(${y * -4}deg)`;
-    });
-    hero.addEventListener("pointerleave", () => { fan.style.transform = ""; });
-  }
 })();
